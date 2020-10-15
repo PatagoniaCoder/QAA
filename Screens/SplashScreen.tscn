@@ -1,0 +1,176 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://themeqaa.tres" type="Theme" id=1]
+[ext_resource path="res://BG/Background.png" type="Texture" id=2]
+[ext_resource path="res://FX/click.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/SplashScreen.gd" type="Script" id=4]
+[ext_resource path="res://Fonts/dynamic.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/RobotoSlab-Thin.ttf" type="DynamicFontData" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 24
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+outline_size = 1
+font_data = ExtResource( 6 )
+
+[node name="SplashScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Cuestion" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.11896
+margin_right = 2.1189
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Cuestion"]
+margin_left = 11.0
+margin_top = 294.0
+margin_right = 1011.0
+margin_bottom = 473.0
+rect_min_size = Vector2( 1000, 0 )
+
+[node name="Text" type="TextEdit" parent="Cuestion/VBoxContainer"]
+margin_right = 1000.0
+margin_bottom = 150.0
+rect_min_size = Vector2( 0, 150 )
+size_flags_horizontal = 5
+custom_styles/read_only = SubResource( 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
+text = "Debe contestar en el menor tiempo posible.
+Si se acaba el tiempo se calificara como erronea y se pasara a la sigueinte pregunta"
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+virtual_keyboard_enabled = false
+selecting_enabled = false
+smooth_scrolling = true
+wrap_enabled = true
+
+[node name="Button1" type="Button" parent="Cuestion/VBoxContainer"]
+margin_left = 440.0
+margin_top = 154.0
+margin_right = 560.0
+margin_bottom = 179.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+text = "CONTINUAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Explanation" type="CenterContainer" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -138.5
+margin_top = -27.0
+margin_right = 138.5
+margin_bottom = 27.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Explanation"]
+margin_right = 277.0
+margin_bottom = 54.0
+
+[node name="Label" type="Label" parent="Explanation/VBoxContainer"]
+margin_right = 277.0
+margin_bottom = 25.0
+theme = ExtResource( 1 )
+text = "Listo/a para responder?"
+uppercase = true
+
+[node name="Button2" type="Button" parent="Explanation/VBoxContainer"]
+margin_top = 29.0
+margin_right = 277.0
+margin_bottom = 54.0
+theme = ExtResource( 1 )
+text = "CONTINUAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Thanks" type="CenterContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Thanks"]
+margin_left = 312.0
+margin_top = 291.0
+margin_right = 712.0
+margin_bottom = 477.0
+
+[node name="Label" type="Label" parent="Thanks/VBoxContainer"]
+margin_right = 400.0
+margin_bottom = 33.0
+theme = ExtResource( 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Observaciones"
+align = 1
+uppercase = true
+
+[node name="TextEdit" type="TextEdit" parent="Thanks/VBoxContainer"]
+margin_top = 37.0
+margin_right = 400.0
+margin_bottom = 157.0
+rect_min_size = Vector2( 400, 120 )
+custom_fonts/font = SubResource( 4 )
+wrap_enabled = true
+
+[node name="Button3" type="Button" parent="Thanks/VBoxContainer"]
+margin_left = 140.0
+margin_top = 161.0
+margin_right = 260.0
+margin_bottom = 186.0
+rect_min_size = Vector2( 120, 0 )
+size_flags_horizontal = 4
+theme = ExtResource( 1 )
+disabled = true
+text = "ENVIAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+[connection signal="tree_entered" from="." to="." method="_on_SplashScreen_tree_entered"]
+[connection signal="pressed" from="Cuestion/VBoxContainer/Button1" to="." method="_on_Button1_pressed"]
+[connection signal="pressed" from="Explanation/VBoxContainer/Button2" to="." method="_on_Button2_pressed"]
+[connection signal="text_changed" from="Thanks/VBoxContainer/TextEdit" to="." method="_on_TextEdit_text_changed"]
+[connection signal="pressed" from="Thanks/VBoxContainer/Button3" to="." method="_on_Button3_pressed"]
