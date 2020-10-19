@@ -227,11 +227,11 @@ __meta__ = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 10 )
-[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" method="_on_ProgressBar_done"]
-[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="RichTextLabel" method="_on_ProgressBar_done"]
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/CenterContainer/HBoxContainer/Send" method="_on_ProgressBar_done"]
-[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/CenterContainer/HBoxContainer/Skip" method="_on_ProgressBar_done"]
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="." method="_on_ProgressBar_done"]
+[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" method="_on_ProgressBar_done"]
+[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/CenterContainer/HBoxContainer/Skip" method="_on_ProgressBar_done"]
+[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="RichTextLabel" method="_on_ProgressBar_done"]
 [connection signal="answer" from="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" to="." method="_on_BtnGrid_answer"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Send" to="." method="_on_Send_pressed"]
-[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Skip" to="." method="_on_Skip_pressed"]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Send" to="." method="_on_Send_pressed" flags=6]
+[connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Skip" to="." method="_on_Skip_pressed" flags=6]
