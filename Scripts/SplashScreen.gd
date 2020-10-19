@@ -15,7 +15,7 @@ func _on_Button1_pressed():
 func _on_Button2_pressed():
 	$AudioStreamPlayer.play()
 	yield($AudioStreamPlayer,"finished")
-	get_tree().change_scene("res://Screens/QuestionScreen.tscn")
+	get_tree().change_scene("res://Scenes/QuestionScreen.tscn")
 
 func _on_Button3_pressed():
 	DummyServer

@@ -23,7 +23,7 @@ func reset():
 	if questions.size()>=DummyServer.questionNumber:
 		get_tree().reload_current_scene()
 	else:
-		get_tree().change_scene("res://Screens/SplashScreen.tscn")
+		get_tree().change_scene("res://Scenes/SplashScreen.tscn")
 
 ## Signals
 func _on_Send_pressed():
