@@ -16,7 +16,7 @@ var questions={
 var answers={
 	"1": [{"Aleman":true},{"Sueco":false},{"Ingles":false},{"Gallego":false}],
 	"2": [{"Ecuador":true},{"BAHAMAS":false},{"BAHRÉIN":false},{"CABO VERDE":false},{"CAMBOYA":false},{"CAMERÚN":false}],
-	"3": [{"Rin":true}],
+	"3": [{"Rin":true},{"ALgomas":false}],
 	"4": [{"El lago Leman":true}],
 	"5": [{"Hungria":true}],
 	"6": [{"Mac":true}],
