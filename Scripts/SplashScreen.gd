@@ -7,6 +7,15 @@ func _ready():
 		$Cuestion.hide()
 		$Thanks.show()
 
+func _on_Button0_pressed():
+	$AudioStreamPlayer.play()
+	if $Form/VBoxContainer/LineEdit.text!="":
+		#Events.new_player($Form/VBoxContainer/LineEdit.text)
+		#yield(Events,"finished")
+		$Form.hide()
+		$Cuestion.show()
+	pass # Replace with function body.
+
 func _on_Button1_pressed():
 	$AudioStreamPlayer.play()
 	$Cuestion.hide()
@@ -37,4 +46,3 @@ func setText(value):
 
 func getText():
 	return textEdit.text
-
