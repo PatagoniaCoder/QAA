@@ -14,7 +14,7 @@ func _ready():
 func checkAnswer():
 	for a in answers[questionNumber].size():
 		if  answers[questionNumber][a].values()[0]:
-			if selected == answers[questionNumber][a].keys()[0].to_upper():
+			if selected == answers[questionNumber][a].keys()[0]:
 				rigth=true
 	DummyServer.score[questionNumber]=rigth
 

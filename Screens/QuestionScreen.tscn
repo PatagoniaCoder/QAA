@@ -111,7 +111,6 @@ texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 stretch_margin_left = 125
 script = ExtResource( 14 )
-time = 3
 
 [node name="QuestionZone" type="MarginContainer" parent="Control/VBoxContainer"]
 margin_top = 54.0
@@ -230,9 +229,9 @@ __meta__ = {
 stream = ExtResource( 10 )
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/CenterContainer/HBoxContainer/Skip" method="_on_ProgressBar_done"]
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/CenterContainer/HBoxContainer/Send" method="_on_ProgressBar_done"]
-[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" method="_on_ProgressBar_done"]
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="RichTextLabel" method="_on_ProgressBar_done"]
 [connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="." method="_on_ProgressBar_done"]
+[connection signal="done" from="Control/VBoxContainer/CategotyTitle/ProgressBar" to="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" method="_on_ProgressBar_done"]
 [connection signal="answer" from="Control/VBoxContainer/AnswersZone/Answers/BtnGrid" to="." method="_on_BtnGrid_answer"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Send" to="." method="_on_Send_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/HBoxContainer/Skip" to="." method="_on_Skip_pressed"]
