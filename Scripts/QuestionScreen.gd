@@ -4,19 +4,21 @@ onready var questionNumber = str(DummyServer.questionNumber)
 
 var questions=DummyServer.questions
 var answers=DummyServer.answers
-var selected
+var selected=[]
 var rigth=false
 
 func _ready():
 	print(DummyServer.score)
+	Events.new_question(questionNumber)
 	$Control/VBoxContainer/QuestionZone/Label.text=questions[questionNumber]
 
 func checkAnswer():
 	for a in answers[questionNumber].size():
 		if  answers[questionNumber][a].values()[0]:
-			if selected == answers[questionNumber][a].keys()[0]:
+			if selected.back() == answers[questionNumber][a].keys()[0]:
 				rigth=true
 	DummyServer.score[questionNumber]=rigth
+	DummyServer.answerDoubt[questionNumber]=selected
 
 func reset():
 	DummyServer.questionNumber=1
@@ -35,6 +37,7 @@ func _on_Send_pressed():
 	pass
 
 func _on_Skip_pressed():
+	
 	$AudioStreamPlayer.play()
 	yield($AudioStreamPlayer,"finished")
 	if $Control/CenterContainer/HBoxContainer/Skip.text=="Omitir":
@@ -42,7 +45,7 @@ func _on_Skip_pressed():
 	reset()
 
 func _on_BtnGrid_answer(value):
-	selected=value
+	selected.append(value)
 	pass 
 
 func _on_ProgressBar_done():

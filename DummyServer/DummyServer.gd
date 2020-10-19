@@ -27,6 +27,7 @@ var answers={
 }
 var questionNumber=1 setget setqnum,getqnum
 var score={} setget setScore
+var answerDoubt={} setget setDoubt
 var observations
 
 func setScore(value):
@@ -37,3 +38,5 @@ func getqnum():
 	
 func setqnum(value):
 	questionNumber+=value
+func setDoubt(value):
+	answerDoubt=value
